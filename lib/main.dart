@@ -1,5 +1,6 @@
-import 'package:bindings/controller.dart';
+
 import 'package:bindings/counter.dart';
+import 'package:bindings/counter_bindings.dart';
 import 'package:bindings/homePage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,12 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-    home:  homePage(),
-    getPages: [
-      GetPage(name: "/counter", page:() => counter(),
-      binding: BindingsBuilder.put(() => controller())
-      )
-    ],
+      home: homePage(),
+      getPages: [
+        GetPage(
+            name: "/counter",
+            page: () => counter(),
+            binding: counter_bindings())
+      ],
     );
   }
 }

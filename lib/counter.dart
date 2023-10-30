@@ -4,8 +4,8 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class counter extends StatelessWidget {
-  controller cCont = Get.find();
-   counter({super.key});
+  final controller cCont = Get.find();
+  counter({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,8 @@ class counter extends StatelessWidget {
                     onPressed: () {
                       cCont.decrement();
                     },
-                    child: Text("Decrement")),],
+                    child: Text("Decrement")),
+              ],
             )
           ],
         ),
